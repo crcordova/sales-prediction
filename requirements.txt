@@ -1,0 +1,7 @@
+pandas
+plotly
+tensorflow
+scikit-learn
+xgboost
+streamlit
+nbformat
