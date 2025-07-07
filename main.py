@@ -8,7 +8,6 @@ from sklearn.preprocessing import LabelEncoder
 import plotly.graph_objects as go
 import plotly.express as px
 
-# --------- Carga y preparación de datos ---------
 @st.cache_data
 def cargar_datos():
     df = pd.read_csv("ventas_antimicrobial.csv")
