@@ -5,3 +5,10 @@ scikit-learn
 xgboost
 streamlit
 nbformat
+fastapi
+uvicorn
+pydantic
+python-multipart
+boto3
+botocore
+python-dotenv
