@@ -9,13 +9,13 @@ import os
 import io
 import csv
 from typing import Dict, List
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = FastAPI(title="API de Gestión de Empresas", version="1.0.0")
 
-origins = [
-    "http://localhost:3000",  # URL de tu frontend Next.js
-    "http://127.0.0.1:3000",
-]
+origins = os.getenv("ALLOWED_ORIGINS", "").split(",")
 
 app.add_middleware(
     CORSMiddleware,
@@ -431,4 +431,5 @@ async def descargar_ejemplo_csv(separador: str = ","):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8002)
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
